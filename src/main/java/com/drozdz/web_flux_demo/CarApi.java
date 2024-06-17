@@ -14,7 +14,7 @@ public class CarApi {
 
     private final CarRepository carRepository;
 
-    @GetMapping(name = "/cars", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/cars", produces = MediaType.APPLICATION_JSON_VALUE)
     public Flux<Car> getAll() {
         return carRepository.findAll().delayElements(Duration.ofSeconds(1));
     }
